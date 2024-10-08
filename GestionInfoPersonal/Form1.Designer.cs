@@ -30,6 +30,8 @@
         {
             this.tabControlPestanias = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblGenero = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -38,11 +40,16 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblGenero = new System.Windows.Forms.Label();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rbFemenino = new System.Windows.Forms.RadioButton();
+            this.monthCalendarFeNaci = new System.Windows.Forms.MonthCalendar();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
+            this.numericUpDownEdad = new System.Windows.Forms.NumericUpDown();
+            this.lblEdad = new System.Windows.Forms.Label();
             this.tabControlPestanias.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlPestanias
@@ -58,6 +65,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblEdad);
+            this.tabPage1.Controls.Add(this.numericUpDownEdad);
+            this.tabPage1.Controls.Add(this.lblFechaNacimiento);
+            this.tabPage1.Controls.Add(this.monthCalendarFeNaci);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.lblEmail);
             this.tabPage1.Controls.Add(this.lblDireccion);
@@ -72,6 +83,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Personales";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rbFemenino);
+            this.panel1.Controls.Add(this.rbMasculino);
+            this.panel1.Controls.Add(this.lblGenero);
+            this.panel1.Location = new System.Drawing.Point(36, 200);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblGenero
+            // 
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Location = new System.Drawing.Point(17, 13);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(52, 16);
+            this.lblGenero.TabIndex = 0;
+            this.lblGenero.Text = "Genero";
             // 
             // lblEmail
             // 
@@ -95,21 +126,21 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(166, 137);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.Size = new System.Drawing.Size(187, 22);
             this.txtEmail.TabIndex = 3;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(166, 90);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(187, 22);
             this.txtDireccion.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(166, 40);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.Size = new System.Drawing.Size(187, 22);
             this.txtNombre.TabIndex = 1;
             // 
             // lblNombre
@@ -140,23 +171,65 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Timer";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // panel1
+            // rbMasculino
             // 
-            this.panel1.Controls.Add(this.lblGenero);
-            this.panel1.Location = new System.Drawing.Point(36, 200);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 6;
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(40, 32);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(89, 20);
+            this.rbMasculino.TabIndex = 1;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
+            this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
             // 
-            // lblGenero
+            // rbFemenino
             // 
-            this.lblGenero.AutoSize = true;
-            this.lblGenero.Location = new System.Drawing.Point(17, 13);
-            this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(52, 16);
-            this.lblGenero.TabIndex = 0;
-            this.lblGenero.Text = "Genero";
+            this.rbFemenino.AutoSize = true;
+            this.rbFemenino.Location = new System.Drawing.Point(40, 58);
+            this.rbFemenino.Name = "rbFemenino";
+            this.rbFemenino.Size = new System.Drawing.Size(88, 20);
+            this.rbFemenino.TabIndex = 2;
+            this.rbFemenino.TabStop = true;
+            this.rbFemenino.Text = "Femenino";
+            this.rbFemenino.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendarFeNaci
+            // 
+            this.monthCalendarFeNaci.Enabled = false;
+            this.monthCalendarFeNaci.Location = new System.Drawing.Point(516, 22);
+            this.monthCalendarFeNaci.MaxSelectionCount = 1;
+            this.monthCalendarFeNaci.Name = "monthCalendarFeNaci";
+            this.monthCalendarFeNaci.TabIndex = 7;
+            this.monthCalendarFeNaci.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarFeNaci_DateChanged);
+            // 
+            // lblFechaNacimiento
+            // 
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(372, 40);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(132, 16);
+            this.lblFechaNacimiento.TabIndex = 8;
+            this.lblFechaNacimiento.Text = "Fecha de nacimiento";
+            // 
+            // numericUpDownEdad
+            // 
+            this.numericUpDownEdad.Location = new System.Drawing.Point(573, 277);
+            this.numericUpDownEdad.Name = "numericUpDownEdad";
+            this.numericUpDownEdad.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownEdad.TabIndex = 9;
+            this.numericUpDownEdad.ValueChanged += new System.EventHandler(this.numericUpDownEdad_ValueChanged);
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Location = new System.Drawing.Point(497, 277);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(40, 16);
+            this.lblEdad.TabIndex = 10;
+            this.lblEdad.Text = "Edad";
             // 
             // Form1
             // 
@@ -173,6 +246,7 @@
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,6 +265,12 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.RadioButton rbFemenino;
+        private System.Windows.Forms.Label lblFechaNacimiento;
+        private System.Windows.Forms.MonthCalendar monthCalendarFeNaci;
+        private System.Windows.Forms.Label lblEdad;
+        private System.Windows.Forms.NumericUpDown numericUpDownEdad;
     }
 }
 
