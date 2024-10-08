@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -117,6 +118,45 @@ namespace GestionInfoPersonal
         private void cbxIncripcionSi_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            rbMasculino.Checked = false;
+            rbFemenino.Checked = false;
+            numericUpDownEdad.Value = 0;
+            DateTime dt = DateTime.Now;
+            monthCalendarFeNaci.SetDate(dt);
+            cbxIncripcionSi.Checked = false;
+            cbxIncripcionNo.Checked = false;
+            /*
+            foreach(var i in checkedListBoxHobbies.CheckedItems)
+            {
+                int item = checkedListBoxHobbies.Items.IndexOf(i);
+                checkedListBoxHobbies.SetItemChecked(item, false);
+            }*/
+
+            //foreach(var item in checkedListBoxHobbies.Items)
+            //{
+            //    checkedListBoxHobbies.Items.
+            //}
+            comboBoxPais.Text = string.Empty;   
+            trackBarCalificacion.Value = 0;
+
+
+        }
+
+        private void brnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -31,7 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.tabControlPestanias = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.numericUpDownEdad = new System.Windows.Forms.NumericUpDown();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
+            this.monthCalendarFeNaci = new System.Windows.Forms.MonthCalendar();
             this.panel1Genero = new System.Windows.Forms.Panel();
+            this.rbFemenino = new System.Windows.Forms.RadioButton();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -40,37 +46,34 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.rbMasculino = new System.Windows.Forms.RadioButton();
-            this.rbFemenino = new System.Windows.Forms.RadioButton();
-            this.monthCalendarFeNaci = new System.Windows.Forms.MonthCalendar();
-            this.lblFechaNacimiento = new System.Windows.Forms.Label();
-            this.numericUpDownEdad = new System.Windows.Forms.NumericUpDown();
-            this.lblEdad = new System.Windows.Forms.Label();
+            this.panelSuscricion = new System.Windows.Forms.Panel();
             this.cbxIncripcionSi = new System.Windows.Forms.CheckBox();
             this.cbxIncripcionNo = new System.Windows.Forms.CheckBox();
-            this.blbPreguntaSuscripcion = new System.Windows.Forms.Label();
-            this.checkedListBoxHobbies = new System.Windows.Forms.CheckedListBox();
-            this.lblHobbies = new System.Windows.Forms.Label();
-            this.comboBoxPais = new System.Windows.Forms.ComboBox();
-            this.lblPais = new System.Windows.Forms.Label();
-            this.trackBarCalificacion = new System.Windows.Forms.TrackBar();
             this.lblSatisfaccion = new System.Windows.Forms.Label();
-            this.pboxFotoPerfil = new System.Windows.Forms.PictureBox();
-            this.lblHoraActual = new System.Windows.Forms.Label();
-            this.timerHoraActual = new System.Windows.Forms.Timer(this.components);
+            this.trackBarCalificacion = new System.Windows.Forms.TrackBar();
+            this.lblPais = new System.Windows.Forms.Label();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.lblHobbies = new System.Windows.Forms.Label();
+            this.checkedListBoxHobbies = new System.Windows.Forms.CheckedListBox();
+            this.blbPreguntaSuscripcion = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.lblSegundos = new System.Windows.Forms.Label();
+            this.lblHoraActual = new System.Windows.Forms.Label();
+            this.pboxFotoPerfil = new System.Windows.Forms.PictureBox();
+            this.timerHoraActual = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panelSuscricion = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.brnSalir = new System.Windows.Forms.Button();
             this.tabControlPestanias.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
             this.panel1Genero.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxFotoPerfil)).BeginInit();
             this.panelSuscricion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxFotoPerfil)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlPestanias
@@ -106,6 +109,40 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Location = new System.Drawing.Point(281, 200);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(40, 16);
+            this.lblEdad.TabIndex = 10;
+            this.lblEdad.Text = "Edad";
+            // 
+            // numericUpDownEdad
+            // 
+            this.numericUpDownEdad.Location = new System.Drawing.Point(271, 232);
+            this.numericUpDownEdad.Name = "numericUpDownEdad";
+            this.numericUpDownEdad.Size = new System.Drawing.Size(70, 22);
+            this.numericUpDownEdad.TabIndex = 9;
+            this.numericUpDownEdad.ValueChanged += new System.EventHandler(this.numericUpDownEdad_ValueChanged);
+            // 
+            // lblFechaNacimiento
+            // 
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(449, 40);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(132, 16);
+            this.lblFechaNacimiento.TabIndex = 8;
+            this.lblFechaNacimiento.Text = "Fecha de nacimiento";
+            // 
+            // monthCalendarFeNaci
+            // 
+            this.monthCalendarFeNaci.Location = new System.Drawing.Point(452, 71);
+            this.monthCalendarFeNaci.MaxSelectionCount = 1;
+            this.monthCalendarFeNaci.Name = "monthCalendarFeNaci";
+            this.monthCalendarFeNaci.TabIndex = 7;
+            this.monthCalendarFeNaci.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarFeNaci_DateChanged);
+            // 
             // panel1Genero
             // 
             this.panel1Genero.Controls.Add(this.rbFemenino);
@@ -116,6 +153,29 @@
             this.panel1Genero.Size = new System.Drawing.Size(200, 100);
             this.panel1Genero.TabIndex = 6;
             this.panel1Genero.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // rbFemenino
+            // 
+            this.rbFemenino.AutoSize = true;
+            this.rbFemenino.Location = new System.Drawing.Point(40, 58);
+            this.rbFemenino.Name = "rbFemenino";
+            this.rbFemenino.Size = new System.Drawing.Size(88, 20);
+            this.rbFemenino.TabIndex = 2;
+            this.rbFemenino.TabStop = true;
+            this.rbFemenino.Text = "Femenino";
+            this.rbFemenino.UseVisualStyleBackColor = true;
+            // 
+            // rbMasculino
+            // 
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(40, 32);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(89, 20);
+            this.rbMasculino.TabIndex = 1;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
+            this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
             // 
             // lblGenero
             // 
@@ -193,76 +253,14 @@
             this.tabPage2.Text = "Preferencias";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // panelSuscricion
             // 
-            this.tabPage3.Controls.Add(this.lblSegundos);
-            this.tabPage3.Controls.Add(this.lblHoraActual);
-            this.tabPage3.Controls.Add(this.pboxFotoPerfil);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(748, 327);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Timer";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // rbMasculino
-            // 
-            this.rbMasculino.AutoSize = true;
-            this.rbMasculino.Location = new System.Drawing.Point(40, 32);
-            this.rbMasculino.Name = "rbMasculino";
-            this.rbMasculino.Size = new System.Drawing.Size(89, 20);
-            this.rbMasculino.TabIndex = 1;
-            this.rbMasculino.TabStop = true;
-            this.rbMasculino.Text = "Masculino";
-            this.rbMasculino.UseVisualStyleBackColor = true;
-            this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
-            // 
-            // rbFemenino
-            // 
-            this.rbFemenino.AutoSize = true;
-            this.rbFemenino.Location = new System.Drawing.Point(40, 58);
-            this.rbFemenino.Name = "rbFemenino";
-            this.rbFemenino.Size = new System.Drawing.Size(88, 20);
-            this.rbFemenino.TabIndex = 2;
-            this.rbFemenino.TabStop = true;
-            this.rbFemenino.Text = "Femenino";
-            this.rbFemenino.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendarFeNaci
-            // 
-            this.monthCalendarFeNaci.Location = new System.Drawing.Point(452, 71);
-            this.monthCalendarFeNaci.MaxSelectionCount = 1;
-            this.monthCalendarFeNaci.Name = "monthCalendarFeNaci";
-            this.monthCalendarFeNaci.TabIndex = 7;
-            this.monthCalendarFeNaci.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarFeNaci_DateChanged);
-            // 
-            // lblFechaNacimiento
-            // 
-            this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(449, 40);
-            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(132, 16);
-            this.lblFechaNacimiento.TabIndex = 8;
-            this.lblFechaNacimiento.Text = "Fecha de nacimiento";
-            // 
-            // numericUpDownEdad
-            // 
-            this.numericUpDownEdad.Location = new System.Drawing.Point(271, 232);
-            this.numericUpDownEdad.Name = "numericUpDownEdad";
-            this.numericUpDownEdad.Size = new System.Drawing.Size(70, 22);
-            this.numericUpDownEdad.TabIndex = 9;
-            this.numericUpDownEdad.ValueChanged += new System.EventHandler(this.numericUpDownEdad_ValueChanged);
-            // 
-            // lblEdad
-            // 
-            this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(281, 200);
-            this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(40, 16);
-            this.lblEdad.TabIndex = 10;
-            this.lblEdad.Text = "Edad";
+            this.panelSuscricion.Controls.Add(this.cbxIncripcionSi);
+            this.panelSuscricion.Controls.Add(this.cbxIncripcionNo);
+            this.panelSuscricion.Location = new System.Drawing.Point(66, 47);
+            this.panelSuscricion.Name = "panelSuscricion";
+            this.panelSuscricion.Size = new System.Drawing.Size(85, 66);
+            this.panelSuscricion.TabIndex = 9;
             // 
             // cbxIncripcionSi
             // 
@@ -285,40 +283,30 @@
             this.cbxIncripcionNo.Text = "No";
             this.cbxIncripcionNo.UseVisualStyleBackColor = true;
             // 
-            // blbPreguntaSuscripcion
+            // lblSatisfaccion
             // 
-            this.blbPreguntaSuscripcion.AutoSize = true;
-            this.blbPreguntaSuscripcion.Location = new System.Drawing.Point(24, 28);
-            this.blbPreguntaSuscripcion.Name = "blbPreguntaSuscripcion";
-            this.blbPreguntaSuscripcion.Size = new System.Drawing.Size(186, 16);
-            this.blbPreguntaSuscripcion.TabIndex = 2;
-            this.blbPreguntaSuscripcion.Text = "¿Quiere suscribirse al boletín?";
+            this.lblSatisfaccion.AutoSize = true;
+            this.lblSatisfaccion.Location = new System.Drawing.Point(395, 128);
+            this.lblSatisfaccion.Name = "lblSatisfaccion";
+            this.lblSatisfaccion.Size = new System.Drawing.Size(312, 16);
+            this.lblSatisfaccion.TabIndex = 8;
+            this.lblSatisfaccion.Text = "Califica el nivel de satisfacción de nuestros servicio";
             // 
-            // checkedListBoxHobbies
+            // trackBarCalificacion
             // 
-            this.checkedListBoxHobbies.FormattingEnabled = true;
-            this.checkedListBoxHobbies.Items.AddRange(new object[] {
-            "Deporte",
-            "Pintura y Dibujo",
-            "Escritura",
-            "Manualidades",
-            "Jardinería",
-            "Cocina",
-            "Danza",
-            "Literatura"});
-            this.checkedListBoxHobbies.Location = new System.Drawing.Point(42, 164);
-            this.checkedListBoxHobbies.Name = "checkedListBoxHobbies";
-            this.checkedListBoxHobbies.Size = new System.Drawing.Size(152, 140);
-            this.checkedListBoxHobbies.TabIndex = 3;
+            this.trackBarCalificacion.Location = new System.Drawing.Point(466, 164);
+            this.trackBarCalificacion.Name = "trackBarCalificacion";
+            this.trackBarCalificacion.Size = new System.Drawing.Size(143, 56);
+            this.trackBarCalificacion.TabIndex = 7;
             // 
-            // lblHobbies
+            // lblPais
             // 
-            this.lblHobbies.AutoSize = true;
-            this.lblHobbies.Location = new System.Drawing.Point(15, 128);
-            this.lblHobbies.Name = "lblHobbies";
-            this.lblHobbies.Size = new System.Drawing.Size(217, 16);
-            this.lblHobbies.TabIndex = 4;
-            this.lblHobbies.Text = "Selecciona los hobbies e Intereses";
+            this.lblPais.AutoSize = true;
+            this.lblPais.Location = new System.Drawing.Point(395, 28);
+            this.lblPais.Name = "lblPais";
+            this.lblPais.Size = new System.Drawing.Size(203, 16);
+            this.lblPais.TabIndex = 6;
+            this.lblPais.Text = "Selecciona el país de residencia";
             // 
             // comboBoxPais
             // 
@@ -339,40 +327,63 @@
             this.comboBoxPais.Size = new System.Drawing.Size(121, 24);
             this.comboBoxPais.TabIndex = 5;
             // 
-            // lblPais
+            // lblHobbies
             // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Location = new System.Drawing.Point(395, 28);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(203, 16);
-            this.lblPais.TabIndex = 6;
-            this.lblPais.Text = "Selecciona el país de residencia";
+            this.lblHobbies.AutoSize = true;
+            this.lblHobbies.Location = new System.Drawing.Point(15, 128);
+            this.lblHobbies.Name = "lblHobbies";
+            this.lblHobbies.Size = new System.Drawing.Size(217, 16);
+            this.lblHobbies.TabIndex = 4;
+            this.lblHobbies.Text = "Selecciona los hobbies e Intereses";
             // 
-            // trackBarCalificacion
+            // checkedListBoxHobbies
             // 
-            this.trackBarCalificacion.Location = new System.Drawing.Point(466, 164);
-            this.trackBarCalificacion.Name = "trackBarCalificacion";
-            this.trackBarCalificacion.Size = new System.Drawing.Size(143, 56);
-            this.trackBarCalificacion.TabIndex = 7;
+            this.checkedListBoxHobbies.FormattingEnabled = true;
+            this.checkedListBoxHobbies.Items.AddRange(new object[] {
+            "Deporte",
+            "Pintura y Dibujo",
+            "Escritura",
+            "Manualidades",
+            "Jardinería",
+            "Cocina",
+            "Danza",
+            "Literatura"});
+            this.checkedListBoxHobbies.Location = new System.Drawing.Point(42, 164);
+            this.checkedListBoxHobbies.Name = "checkedListBoxHobbies";
+            this.checkedListBoxHobbies.Size = new System.Drawing.Size(152, 140);
+            this.checkedListBoxHobbies.TabIndex = 3;
             // 
-            // lblSatisfaccion
+            // blbPreguntaSuscripcion
             // 
-            this.lblSatisfaccion.AutoSize = true;
-            this.lblSatisfaccion.Location = new System.Drawing.Point(395, 128);
-            this.lblSatisfaccion.Name = "lblSatisfaccion";
-            this.lblSatisfaccion.Size = new System.Drawing.Size(312, 16);
-            this.lblSatisfaccion.TabIndex = 8;
-            this.lblSatisfaccion.Text = "Califica el nivel de satisfacción de nuestros servicio";
+            this.blbPreguntaSuscripcion.AutoSize = true;
+            this.blbPreguntaSuscripcion.Location = new System.Drawing.Point(24, 28);
+            this.blbPreguntaSuscripcion.Name = "blbPreguntaSuscripcion";
+            this.blbPreguntaSuscripcion.Size = new System.Drawing.Size(186, 16);
+            this.blbPreguntaSuscripcion.TabIndex = 2;
+            this.blbPreguntaSuscripcion.Text = "¿Quiere suscribirse al boletín?";
             // 
-            // pboxFotoPerfil
+            // tabPage3
             // 
-            this.pboxFotoPerfil.Image = global::GestionInfoPersonal.Properties.Resources._ca0d59ee_e62d_48b3_af4a_cec45b260a7b;
-            this.pboxFotoPerfil.Location = new System.Drawing.Point(260, 6);
-            this.pboxFotoPerfil.Name = "pboxFotoPerfil";
-            this.pboxFotoPerfil.Size = new System.Drawing.Size(225, 217);
-            this.pboxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxFotoPerfil.TabIndex = 0;
-            this.pboxFotoPerfil.TabStop = false;
+            this.tabPage3.Controls.Add(this.lblSegundos);
+            this.tabPage3.Controls.Add(this.lblHoraActual);
+            this.tabPage3.Controls.Add(this.pboxFotoPerfil);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(748, 327);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Timer";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // lblSegundos
+            // 
+            this.lblSegundos.AutoSize = true;
+            this.lblSegundos.Location = new System.Drawing.Point(253, 266);
+            this.lblSegundos.Name = "lblSegundos";
+            this.lblSegundos.Size = new System.Drawing.Size(75, 16);
+            this.lblSegundos.TabIndex = 2;
+            this.lblSegundos.Text = "Segundos: ";
             // 
             // lblHoraActual
             // 
@@ -384,36 +395,61 @@
             this.lblHoraActual.Text = "label1";
             this.lblHoraActual.Click += new System.EventHandler(this.lblHoraActual_Click);
             // 
+            // pboxFotoPerfil
+            // 
+            this.pboxFotoPerfil.Image = global::GestionInfoPersonal.Properties.Resources._ca0d59ee_e62d_48b3_af4a_cec45b260a7b;
+            this.pboxFotoPerfil.Location = new System.Drawing.Point(260, 6);
+            this.pboxFotoPerfil.Name = "pboxFotoPerfil";
+            this.pboxFotoPerfil.Size = new System.Drawing.Size(225, 217);
+            this.pboxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxFotoPerfil.TabIndex = 0;
+            this.pboxFotoPerfil.TabStop = false;
+            // 
             // timerHoraActual
             // 
             this.timerHoraActual.Enabled = true;
             this.timerHoraActual.Interval = 1000;
             this.timerHoraActual.Tick += new System.EventHandler(this.timerHoraActual_Tick);
             // 
-            // lblSegundos
+            // btnGuardar
             // 
-            this.lblSegundos.AutoSize = true;
-            this.lblSegundos.Location = new System.Drawing.Point(253, 266);
-            this.lblSegundos.Name = "lblSegundos";
-            this.lblSegundos.Size = new System.Drawing.Size(75, 16);
-            this.lblSegundos.TabIndex = 2;
-            this.lblSegundos.Text = "Segundos: ";
+            this.btnGuardar.Location = new System.Drawing.Point(165, 425);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // panelSuscricion
+            // btnLimpiar
             // 
-            this.panelSuscricion.Controls.Add(this.cbxIncripcionSi);
-            this.panelSuscricion.Controls.Add(this.cbxIncripcionNo);
-            this.panelSuscricion.Location = new System.Drawing.Point(66, 47);
-            this.panelSuscricion.Name = "panelSuscricion";
-            this.panelSuscricion.Size = new System.Drawing.Size(85, 66);
-            this.panelSuscricion.TabIndex = 9;
+            this.btnLimpiar.Location = new System.Drawing.Point(307, 424);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 2;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // brnSalir
+            // 
+            this.brnSalir.Location = new System.Drawing.Point(460, 424);
+            this.brnSalir.Name = "brnSalir";
+            this.brnSalir.Size = new System.Drawing.Size(75, 23);
+            this.brnSalir.TabIndex = 3;
+            this.brnSalir.Text = "Salir";
+            this.brnSalir.UseVisualStyleBackColor = true;
+            this.brnSalir.Click += new System.EventHandler(this.brnSalir_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(810, 493);
+            this.Controls.Add(this.brnSalir);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tabControlPestanias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -422,17 +458,17 @@
             this.tabControlPestanias.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();
             this.panel1Genero.ResumeLayout(false);
             this.panel1Genero.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxFotoPerfil)).EndInit();
             this.panelSuscricion.ResumeLayout(false);
             this.panelSuscricion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxFotoPerfil)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,6 +508,9 @@
         private System.Windows.Forms.Label lblSegundos;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panelSuscricion;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button brnSalir;
     }
 }
 
