@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlPestanias = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1Genero = new System.Windows.Forms.Panel();
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -55,12 +56,21 @@
             this.lblPais = new System.Windows.Forms.Label();
             this.trackBarCalificacion = new System.Windows.Forms.TrackBar();
             this.lblSatisfaccion = new System.Windows.Forms.Label();
+            this.pboxFotoPerfil = new System.Windows.Forms.PictureBox();
+            this.lblHoraActual = new System.Windows.Forms.Label();
+            this.timerHoraActual = new System.Windows.Forms.Timer(this.components);
+            this.lblSegundos = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panelSuscricion = new System.Windows.Forms.Panel();
             this.tabControlPestanias.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel1Genero.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxFotoPerfil)).BeginInit();
+            this.panelSuscricion.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlPestanias
@@ -80,7 +90,7 @@
             this.tabPage1.Controls.Add(this.numericUpDownEdad);
             this.tabPage1.Controls.Add(this.lblFechaNacimiento);
             this.tabPage1.Controls.Add(this.monthCalendarFeNaci);
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.panel1Genero);
             this.tabPage1.Controls.Add(this.lblEmail);
             this.tabPage1.Controls.Add(this.lblDireccion);
             this.tabPage1.Controls.Add(this.txtEmail);
@@ -94,17 +104,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Personales";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // panel1
+            // panel1Genero
             // 
-            this.panel1.Controls.Add(this.rbFemenino);
-            this.panel1.Controls.Add(this.rbMasculino);
-            this.panel1.Controls.Add(this.lblGenero);
-            this.panel1.Location = new System.Drawing.Point(36, 200);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1Genero.Controls.Add(this.rbFemenino);
+            this.panel1Genero.Controls.Add(this.rbMasculino);
+            this.panel1Genero.Controls.Add(this.lblGenero);
+            this.panel1Genero.Location = new System.Drawing.Point(36, 200);
+            this.panel1Genero.Name = "panel1Genero";
+            this.panel1Genero.Size = new System.Drawing.Size(200, 100);
+            this.panel1Genero.TabIndex = 6;
+            this.panel1Genero.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblGenero
             // 
@@ -153,6 +164,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(187, 22);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
@@ -165,6 +177,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panelSuscricion);
             this.tabPage2.Controls.Add(this.lblSatisfaccion);
             this.tabPage2.Controls.Add(this.trackBarCalificacion);
             this.tabPage2.Controls.Add(this.lblPais);
@@ -172,8 +185,6 @@
             this.tabPage2.Controls.Add(this.lblHobbies);
             this.tabPage2.Controls.Add(this.checkedListBoxHobbies);
             this.tabPage2.Controls.Add(this.blbPreguntaSuscripcion);
-            this.tabPage2.Controls.Add(this.cbxIncripcionNo);
-            this.tabPage2.Controls.Add(this.cbxIncripcionSi);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -184,6 +195,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.lblSegundos);
+            this.tabPage3.Controls.Add(this.lblHoraActual);
+            this.tabPage3.Controls.Add(this.pboxFotoPerfil);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -218,8 +232,7 @@
             // 
             // monthCalendarFeNaci
             // 
-            this.monthCalendarFeNaci.Enabled = false;
-            this.monthCalendarFeNaci.Location = new System.Drawing.Point(516, 22);
+            this.monthCalendarFeNaci.Location = new System.Drawing.Point(452, 71);
             this.monthCalendarFeNaci.MaxSelectionCount = 1;
             this.monthCalendarFeNaci.Name = "monthCalendarFeNaci";
             this.monthCalendarFeNaci.TabIndex = 7;
@@ -228,7 +241,7 @@
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(372, 40);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(449, 40);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(132, 16);
             this.lblFechaNacimiento.TabIndex = 8;
@@ -236,16 +249,16 @@
             // 
             // numericUpDownEdad
             // 
-            this.numericUpDownEdad.Location = new System.Drawing.Point(573, 277);
+            this.numericUpDownEdad.Location = new System.Drawing.Point(271, 232);
             this.numericUpDownEdad.Name = "numericUpDownEdad";
-            this.numericUpDownEdad.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownEdad.Size = new System.Drawing.Size(70, 22);
             this.numericUpDownEdad.TabIndex = 9;
             this.numericUpDownEdad.ValueChanged += new System.EventHandler(this.numericUpDownEdad_ValueChanged);
             // 
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(497, 277);
+            this.lblEdad.Location = new System.Drawing.Point(281, 200);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(40, 16);
             this.lblEdad.TabIndex = 10;
@@ -254,17 +267,18 @@
             // cbxIncripcionSi
             // 
             this.cbxIncripcionSi.AutoSize = true;
-            this.cbxIncripcionSi.Location = new System.Drawing.Point(72, 57);
+            this.cbxIncripcionSi.Location = new System.Drawing.Point(22, 10);
             this.cbxIncripcionSi.Name = "cbxIncripcionSi";
             this.cbxIncripcionSi.Size = new System.Drawing.Size(41, 20);
             this.cbxIncripcionSi.TabIndex = 0;
             this.cbxIncripcionSi.Text = "Sí";
             this.cbxIncripcionSi.UseVisualStyleBackColor = true;
+            this.cbxIncripcionSi.CheckedChanged += new System.EventHandler(this.cbxIncripcionSi_CheckedChanged);
             // 
             // cbxIncripcionNo
             // 
             this.cbxIncripcionNo.AutoSize = true;
-            this.cbxIncripcionNo.Location = new System.Drawing.Point(72, 84);
+            this.cbxIncripcionNo.Location = new System.Drawing.Point(22, 36);
             this.cbxIncripcionNo.Name = "cbxIncripcionNo";
             this.cbxIncripcionNo.Size = new System.Drawing.Size(47, 20);
             this.cbxIncripcionNo.TabIndex = 1;
@@ -350,6 +364,50 @@
             this.lblSatisfaccion.TabIndex = 8;
             this.lblSatisfaccion.Text = "Califica el nivel de satisfacción de nuestros servicio";
             // 
+            // pboxFotoPerfil
+            // 
+            this.pboxFotoPerfil.Image = global::GestionInfoPersonal.Properties.Resources._ca0d59ee_e62d_48b3_af4a_cec45b260a7b;
+            this.pboxFotoPerfil.Location = new System.Drawing.Point(260, 6);
+            this.pboxFotoPerfil.Name = "pboxFotoPerfil";
+            this.pboxFotoPerfil.Size = new System.Drawing.Size(225, 217);
+            this.pboxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxFotoPerfil.TabIndex = 0;
+            this.pboxFotoPerfil.TabStop = false;
+            // 
+            // lblHoraActual
+            // 
+            this.lblHoraActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoraActual.Location = new System.Drawing.Point(359, 250);
+            this.lblHoraActual.Name = "lblHoraActual";
+            this.lblHoraActual.Size = new System.Drawing.Size(153, 51);
+            this.lblHoraActual.TabIndex = 1;
+            this.lblHoraActual.Text = "label1";
+            this.lblHoraActual.Click += new System.EventHandler(this.lblHoraActual_Click);
+            // 
+            // timerHoraActual
+            // 
+            this.timerHoraActual.Enabled = true;
+            this.timerHoraActual.Interval = 1000;
+            this.timerHoraActual.Tick += new System.EventHandler(this.timerHoraActual_Tick);
+            // 
+            // lblSegundos
+            // 
+            this.lblSegundos.AutoSize = true;
+            this.lblSegundos.Location = new System.Drawing.Point(253, 266);
+            this.lblSegundos.Name = "lblSegundos";
+            this.lblSegundos.Size = new System.Drawing.Size(75, 16);
+            this.lblSegundos.TabIndex = 2;
+            this.lblSegundos.Text = "Segundos: ";
+            // 
+            // panelSuscricion
+            // 
+            this.panelSuscricion.Controls.Add(this.cbxIncripcionSi);
+            this.panelSuscricion.Controls.Add(this.cbxIncripcionNo);
+            this.panelSuscricion.Location = new System.Drawing.Point(66, 47);
+            this.panelSuscricion.Name = "panelSuscricion";
+            this.panelSuscricion.Size = new System.Drawing.Size(85, 66);
+            this.panelSuscricion.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,15 +418,21 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "FormGeneral";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControlPestanias.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel1Genero.ResumeLayout(false);
+            this.panel1Genero.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxFotoPerfil)).EndInit();
+            this.panelSuscricion.ResumeLayout(false);
+            this.panelSuscricion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,7 +449,7 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel1Genero;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFemenino;
@@ -402,6 +466,12 @@
         private System.Windows.Forms.Label lblPais;
         private System.Windows.Forms.ComboBox comboBoxPais;
         private System.Windows.Forms.Label lblHobbies;
+        private System.Windows.Forms.Label lblHoraActual;
+        private System.Windows.Forms.PictureBox pboxFotoPerfil;
+        private System.Windows.Forms.Timer timerHoraActual;
+        private System.Windows.Forms.Label lblSegundos;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panelSuscricion;
     }
 }
 
