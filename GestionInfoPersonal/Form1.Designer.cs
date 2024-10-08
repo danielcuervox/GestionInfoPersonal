@@ -46,10 +46,21 @@
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
             this.numericUpDownEdad = new System.Windows.Forms.NumericUpDown();
             this.lblEdad = new System.Windows.Forms.Label();
+            this.cbxIncripcionSi = new System.Windows.Forms.CheckBox();
+            this.cbxIncripcionNo = new System.Windows.Forms.CheckBox();
+            this.blbPreguntaSuscripcion = new System.Windows.Forms.Label();
+            this.checkedListBoxHobbies = new System.Windows.Forms.CheckedListBox();
+            this.lblHobbies = new System.Windows.Forms.Label();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.lblPais = new System.Windows.Forms.Label();
+            this.trackBarCalificacion = new System.Windows.Forms.TrackBar();
+            this.lblSatisfaccion = new System.Windows.Forms.Label();
             this.tabControlPestanias.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlPestanias
@@ -154,6 +165,15 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblSatisfaccion);
+            this.tabPage2.Controls.Add(this.trackBarCalificacion);
+            this.tabPage2.Controls.Add(this.lblPais);
+            this.tabPage2.Controls.Add(this.comboBoxPais);
+            this.tabPage2.Controls.Add(this.lblHobbies);
+            this.tabPage2.Controls.Add(this.checkedListBoxHobbies);
+            this.tabPage2.Controls.Add(this.blbPreguntaSuscripcion);
+            this.tabPage2.Controls.Add(this.cbxIncripcionNo);
+            this.tabPage2.Controls.Add(this.cbxIncripcionSi);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -231,6 +251,105 @@
             this.lblEdad.TabIndex = 10;
             this.lblEdad.Text = "Edad";
             // 
+            // cbxIncripcionSi
+            // 
+            this.cbxIncripcionSi.AutoSize = true;
+            this.cbxIncripcionSi.Location = new System.Drawing.Point(72, 57);
+            this.cbxIncripcionSi.Name = "cbxIncripcionSi";
+            this.cbxIncripcionSi.Size = new System.Drawing.Size(41, 20);
+            this.cbxIncripcionSi.TabIndex = 0;
+            this.cbxIncripcionSi.Text = "Sí";
+            this.cbxIncripcionSi.UseVisualStyleBackColor = true;
+            // 
+            // cbxIncripcionNo
+            // 
+            this.cbxIncripcionNo.AutoSize = true;
+            this.cbxIncripcionNo.Location = new System.Drawing.Point(72, 84);
+            this.cbxIncripcionNo.Name = "cbxIncripcionNo";
+            this.cbxIncripcionNo.Size = new System.Drawing.Size(47, 20);
+            this.cbxIncripcionNo.TabIndex = 1;
+            this.cbxIncripcionNo.Text = "No";
+            this.cbxIncripcionNo.UseVisualStyleBackColor = true;
+            // 
+            // blbPreguntaSuscripcion
+            // 
+            this.blbPreguntaSuscripcion.AutoSize = true;
+            this.blbPreguntaSuscripcion.Location = new System.Drawing.Point(24, 28);
+            this.blbPreguntaSuscripcion.Name = "blbPreguntaSuscripcion";
+            this.blbPreguntaSuscripcion.Size = new System.Drawing.Size(186, 16);
+            this.blbPreguntaSuscripcion.TabIndex = 2;
+            this.blbPreguntaSuscripcion.Text = "¿Quiere suscribirse al boletín?";
+            // 
+            // checkedListBoxHobbies
+            // 
+            this.checkedListBoxHobbies.FormattingEnabled = true;
+            this.checkedListBoxHobbies.Items.AddRange(new object[] {
+            "Deporte",
+            "Pintura y Dibujo",
+            "Escritura",
+            "Manualidades",
+            "Jardinería",
+            "Cocina",
+            "Danza",
+            "Literatura"});
+            this.checkedListBoxHobbies.Location = new System.Drawing.Point(42, 164);
+            this.checkedListBoxHobbies.Name = "checkedListBoxHobbies";
+            this.checkedListBoxHobbies.Size = new System.Drawing.Size(152, 140);
+            this.checkedListBoxHobbies.TabIndex = 3;
+            // 
+            // lblHobbies
+            // 
+            this.lblHobbies.AutoSize = true;
+            this.lblHobbies.Location = new System.Drawing.Point(15, 128);
+            this.lblHobbies.Name = "lblHobbies";
+            this.lblHobbies.Size = new System.Drawing.Size(217, 16);
+            this.lblHobbies.TabIndex = 4;
+            this.lblHobbies.Text = "Selecciona los hobbies e Intereses";
+            // 
+            // comboBoxPais
+            // 
+            this.comboBoxPais.FormattingEnabled = true;
+            this.comboBoxPais.Items.AddRange(new object[] {
+            "Alemania",
+            "Austria",
+            "Francia",
+            "Italia",
+            "Reino Unido",
+            "Rusia",
+            "Japón",
+            "Portugal",
+            "España",
+            "Polonia"});
+            this.comboBoxPais.Location = new System.Drawing.Point(452, 57);
+            this.comboBoxPais.Name = "comboBoxPais";
+            this.comboBoxPais.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxPais.TabIndex = 5;
+            // 
+            // lblPais
+            // 
+            this.lblPais.AutoSize = true;
+            this.lblPais.Location = new System.Drawing.Point(395, 28);
+            this.lblPais.Name = "lblPais";
+            this.lblPais.Size = new System.Drawing.Size(203, 16);
+            this.lblPais.TabIndex = 6;
+            this.lblPais.Text = "Selecciona el país de residencia";
+            // 
+            // trackBarCalificacion
+            // 
+            this.trackBarCalificacion.Location = new System.Drawing.Point(466, 164);
+            this.trackBarCalificacion.Name = "trackBarCalificacion";
+            this.trackBarCalificacion.Size = new System.Drawing.Size(143, 56);
+            this.trackBarCalificacion.TabIndex = 7;
+            // 
+            // lblSatisfaccion
+            // 
+            this.lblSatisfaccion.AutoSize = true;
+            this.lblSatisfaccion.Location = new System.Drawing.Point(395, 128);
+            this.lblSatisfaccion.Name = "lblSatisfaccion";
+            this.lblSatisfaccion.Size = new System.Drawing.Size(312, 16);
+            this.lblSatisfaccion.TabIndex = 8;
+            this.lblSatisfaccion.Text = "Califica el nivel de satisfacción de nuestros servicio";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,7 +365,10 @@
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarCalificacion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,6 +393,15 @@
         private System.Windows.Forms.MonthCalendar monthCalendarFeNaci;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.NumericUpDown numericUpDownEdad;
+        private System.Windows.Forms.CheckedListBox checkedListBoxHobbies;
+        private System.Windows.Forms.Label blbPreguntaSuscripcion;
+        private System.Windows.Forms.CheckBox cbxIncripcionNo;
+        private System.Windows.Forms.CheckBox cbxIncripcionSi;
+        private System.Windows.Forms.Label lblSatisfaccion;
+        private System.Windows.Forms.TrackBar trackBarCalificacion;
+        private System.Windows.Forms.Label lblPais;
+        private System.Windows.Forms.ComboBox comboBoxPais;
+        private System.Windows.Forms.Label lblHobbies;
     }
 }
 
