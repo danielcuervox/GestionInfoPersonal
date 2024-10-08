@@ -13,6 +13,21 @@ namespace GestionInfoPersonal
 {
     public partial class Form1 : Form
     {
+
+        String nombre {  get; set; }
+        String direcion { get; set; }
+        String email { get; set; }
+        String genero { get; set; }
+        decimal edad {  get; set; }
+        String fechaNaci { get; set; }
+        String suscripcion { get; set; }
+        List<String> pasatiempos { get; set; }
+
+        String pais {  get; set; }
+        int nivelSatisfaccion { get; set; }
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +43,10 @@ namespace GestionInfoPersonal
         {
             if (rbMasculino.Checked)
             {
-                String genero = "masculino";
+                genero = "masculino";
             }
             else if (rbMasculino.Checked) {
-                String genero = "femenino";
+                genero = "femenino";
             }
 
         }
@@ -48,13 +63,13 @@ namespace GestionInfoPersonal
             monthCalendarFeNaci.AddBoldedDate(fNaci);
             monthCalendarFeNaci.UpdateBoldedDates();
 
-           
+            fechaNaci = fNaci.ToShortDateString();
 
         }
 
         private void numericUpDownEdad_ValueChanged(object sender, EventArgs e)
         {
-            decimal edad = numericUpDownEdad.Value;
+            edad = numericUpDownEdad.Value;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -85,7 +100,7 @@ namespace GestionInfoPersonal
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            
+            nombre = txtNombre.Text;
         }
         //método que se llama al iniciar el formulario
         private void Form1_Load(object sender, EventArgs e)
@@ -157,6 +172,38 @@ namespace GestionInfoPersonal
         private void brnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkedListBoxHobbies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            direcion = txtDireccion.Text;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            email = txtEmail.Text;
+        }
+
+        private void panelSuscricion_Paint(object sender, PaintEventArgs e)
+        {
+            if(cbxIncripcionNo != null)
+            {
+                pasatiempos.Add(cbxIncripcionNo.Text);
+            }
+            else
+            {
+                pasat
+            }
+
+            if(cbxIncripcionSi != null)
+            {
+                pasatiempos.Add(cob)
+            }
         }
     }
 }
