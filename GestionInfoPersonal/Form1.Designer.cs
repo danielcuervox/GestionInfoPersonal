@@ -30,16 +30,19 @@
         {
             this.tabControlPestanias = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblGenero = new System.Windows.Forms.Label();
             this.tabControlPestanias.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlPestanias
@@ -55,6 +58,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.lblEmail);
             this.tabPage1.Controls.Add(this.lblDireccion);
             this.tabPage1.Controls.Add(this.txtEmail);
@@ -68,6 +72,54 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Personales";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(33, 142);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(118, 16);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "Correo Electrónico";
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(30, 95);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(64, 16);
+            this.lblDireccion.TabIndex = 4;
+            this.lblDireccion.Text = "Dirección";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(166, 137);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.TabIndex = 3;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(166, 90);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(100, 22);
+            this.txtDireccion.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(166, 40);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(27, 40);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre";
             // 
             // tabPage2
             // 
@@ -89,53 +141,22 @@
             this.tabPage3.Text = "Timer";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // lblNombre
+            // panel1
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(27, 40);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre";
+            this.panel1.Controls.Add(this.lblGenero);
+            this.panel1.Location = new System.Drawing.Point(36, 200);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 6;
             // 
-            // txtNombre
+            // lblGenero
             // 
-            this.txtNombre.Location = new System.Drawing.Point(166, 40);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 22);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(166, 90);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 22);
-            this.txtDireccion.TabIndex = 2;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(166, 137);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
-            this.txtEmail.TabIndex = 3;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(30, 95);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(64, 16);
-            this.lblDireccion.TabIndex = 4;
-            this.lblDireccion.Text = "Dirección";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(33, 142);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(118, 16);
-            this.lblEmail.TabIndex = 5;
-            this.lblEmail.Text = "Correo Electrónico";
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Location = new System.Drawing.Point(17, 13);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(52, 16);
+            this.lblGenero.TabIndex = 0;
+            this.lblGenero.Text = "Genero";
             // 
             // Form1
             // 
@@ -150,6 +171,8 @@
             this.tabControlPestanias.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -166,6 +189,8 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblGenero;
     }
 }
 
