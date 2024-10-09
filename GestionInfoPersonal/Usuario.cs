@@ -37,7 +37,7 @@ namespace GestionInfoPersonal
         public String mostrarInfo()
         {
             String info = $"nombre: {nombre} \n DIRECCION: {direccion} \n e-Mail: {email} \n GÉNERO: {genero} " +
-                $"\n FECHA DE NACIMIENTO: {fechaNaci} \n suscripcion: {suscripcion} \n PASATIEMPOS: {pasatiempos} \n PAIS: {pais} " +
+                $"\n FECHA DE NACIMIENTO: {fechaNaci} \n suscripcion: {suscripcion} \n PASATIEMPOS: {string.Join(", ", pasatiempos)} \n PAIS: {pais} " +
                 $"\n NIVEL DE SATISFACCION: {nivelSatisfaccion}";
 
             return info;

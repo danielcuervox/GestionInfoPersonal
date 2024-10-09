@@ -300,6 +300,7 @@
             this.trackBarCalificacion.Name = "trackBarCalificacion";
             this.trackBarCalificacion.Size = new System.Drawing.Size(143, 56);
             this.trackBarCalificacion.TabIndex = 7;
+            this.trackBarCalificacion.Scroll += new System.EventHandler(this.trackBarCalificacion_Scroll);
             // 
             // lblPais
             // 
@@ -328,6 +329,7 @@
             this.comboBoxPais.Name = "comboBoxPais";
             this.comboBoxPais.Size = new System.Drawing.Size(121, 24);
             this.comboBoxPais.TabIndex = 5;
+            this.comboBoxPais.SelectedIndexChanged += new System.EventHandler(this.comboBoxPais_SelectedIndexChanged);
             // 
             // lblHobbies
             // 
@@ -457,6 +459,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "FormGeneral";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControlPestanias.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
