@@ -43,10 +43,10 @@ namespace GestionInfoPersonal
         {
             if (rbMasculino.Checked)
             {
-                genero = "masculino";
+                genero = rbMasculino.Text;
             }
-            else if (rbMasculino.Checked) {
-                genero = "femenino";
+            else if (rbFemenino.Checked) {
+                genero = rbFemenino.Text;
             }
 
         }
