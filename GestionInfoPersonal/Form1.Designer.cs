@@ -175,7 +175,6 @@
             this.rbMasculino.TabStop = true;
             this.rbMasculino.Text = "Masculino";
             this.rbMasculino.UseVisualStyleBackColor = true;
-            this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
             // 
             // lblGenero
             // 
@@ -458,7 +457,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "FormGeneral";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControlPestanias.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

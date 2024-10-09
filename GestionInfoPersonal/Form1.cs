@@ -14,29 +14,22 @@ namespace GestionInfoPersonal
     public partial class Form1 : Form
     {
 
-        String nombre {  get; set; }
-        String direcion { get; set; }
-        String email { get; set; }
-        String genero { get; set; }
-        decimal edad {  get; set; }
-        String fechaNaci { get; set; }
-        String suscripcion { get; set; }
-        List<String> pasatiempos { get; set; }
-
-        String pais {  get; set; }
-        int nivelSatisfaccion { get; set; }
-
+        String nombre;
+        String direcion;
+        String email;
+        String genero;
+        decimal edad;
+        String fechaNaci;
+        String suscripcion;
+        List<String> pasatiempos = new List<string>();
+        String pais;
+        int nivelSatisfaccion;
 
 
         public Form1()
         {
             InitializeComponent();
             //timerHoraActual_Tick().Start();
-        }
-
-        private void rbMasculino_CheckedChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -137,6 +130,37 @@ namespace GestionInfoPersonal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            String nombre = txtNombre.Text;
+            String direcion = txtDireccion.Text;
+            String email = txtEmail.Text;
+            String genero; 
+            if(rbMasculino.Checked)
+            {
+                genero = rbMasculino.Text;
+            }
+            else
+            {
+                genero = rbFemenino.Text;
+            }
+
+            int edad = int.Parse(numericUpDownEdad.Value.ToString());
+            String fechaNaci = monthCalendarFeNaci.ToString();
+            String suscripcion = cbxIncripcionSi.Text;
+            //List<String> pasatiempos = checkedListBoxHobbies.Items;
+
+            foreach (var item in checkedListBoxHobbies.CheckedItems)
+            {
+                pasatiempos.Add(item.ToString());
+            }
+
+            String pais = comboBoxPais.Text;
+            int nivelSatisfaccion = trackBarCalificacion.Value;
+
+
+            Usuario encuesta = new Usuario(nombre, direcion, email, genero, edad, fechaNaci, suscripcion, pasatiempos, pais, nivelSatisfaccion);
+
+            MessageBox.Show(encuesta.mostrarInfo());
+            
 
         }
 
@@ -152,20 +176,14 @@ namespace GestionInfoPersonal
             monthCalendarFeNaci.SetDate(dt);
             cbxIncripcionSi.Checked = false;
             cbxIncripcionNo.Checked = false;
-            /*
-            foreach(var i in checkedListBoxHobbies.CheckedItems)
+            
+            //para desmarcar los items del checkedbox list
+            for(int i = 0; i < checkedListBoxHobbies.Items.Count; i++)
             {
-                int item = checkedListBoxHobbies.Items.IndexOf(i);
-                checkedListBoxHobbies.SetItemChecked(item, false);
-            }*/
-
-            //foreach(var item in checkedListBoxHobbies.Items)
-            //{
-            //    checkedListBoxHobbies.Items.
-            //}
+                checkedListBoxHobbies.SetItemChecked(i, false);
+            }
             comboBoxPais.Text = string.Empty;   
             trackBarCalificacion.Value = 0;
-
 
         }
 
@@ -191,19 +209,16 @@ namespace GestionInfoPersonal
 
         private void panelSuscricion_Paint(object sender, PaintEventArgs e)
         {
-            if(cbxIncripcionNo != null)
+            if(cbxIncripcionNo.Checked)
             {
-                pasatiempos.Add(cbxIncripcionNo.Text);
+                suscripcion = cbxIncripcionSi.Text;
             }
             else
             {
-                pasat
+                suscripcion = txtDireccion.Text;
             }
 
-            if(cbxIncripcionSi != null)
-            {
-                pasatiempos.Add(cob)
-            }
+            
         }
     }
 }
