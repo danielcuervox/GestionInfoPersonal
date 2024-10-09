@@ -175,7 +175,6 @@
             this.rbMasculino.TabStop = true;
             this.rbMasculino.Text = "Masculino";
             this.rbMasculino.UseVisualStyleBackColor = true;
-            this.rbMasculino.CheckedChanged += new System.EventHandler(this.rbMasculino_CheckedChanged);
             // 
             // lblGenero
             // 
@@ -210,6 +209,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(187, 22);
             this.txtEmail.TabIndex = 3;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtDireccion
             // 
@@ -217,6 +217,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(187, 22);
             this.txtDireccion.TabIndex = 2;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // txtNombre
             // 
@@ -261,6 +262,7 @@
             this.panelSuscricion.Name = "panelSuscricion";
             this.panelSuscricion.Size = new System.Drawing.Size(85, 66);
             this.panelSuscricion.TabIndex = 9;
+            this.panelSuscricion.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSuscricion_Paint);
             // 
             // cbxIncripcionSi
             // 
@@ -352,6 +354,7 @@
             this.checkedListBoxHobbies.Name = "checkedListBoxHobbies";
             this.checkedListBoxHobbies.Size = new System.Drawing.Size(152, 140);
             this.checkedListBoxHobbies.TabIndex = 3;
+            this.checkedListBoxHobbies.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxHobbies_SelectedIndexChanged);
             // 
             // blbPreguntaSuscripcion
             // 
@@ -454,7 +457,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "FormGeneral";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControlPestanias.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -13,25 +13,33 @@ namespace GestionInfoPersonal
 {
     public partial class Form1 : Form
     {
+
+        String nombre;
+        String direcion;
+        String email;
+        String genero;
+        decimal edad;
+        String fechaNaci;
+        String suscripcion;
+        List<String> pasatiempos = new List<string>();
+        String pais;
+        int nivelSatisfaccion;
+
+
         public Form1()
         {
             InitializeComponent();
             //timerHoraActual_Tick().Start();
         }
 
-        private void rbMasculino_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             if (rbMasculino.Checked)
             {
-                String genero = "masculino";
+                genero = rbMasculino.Text;
             }
-            else if (rbMasculino.Checked) {
-                String genero = "femenino";
+            else if (rbFemenino.Checked) {
+                genero = rbFemenino.Text;
             }
 
         }
@@ -48,13 +56,13 @@ namespace GestionInfoPersonal
             monthCalendarFeNaci.AddBoldedDate(fNaci);
             monthCalendarFeNaci.UpdateBoldedDates();
 
-           
+            fechaNaci = fNaci.ToShortDateString();
 
         }
 
         private void numericUpDownEdad_ValueChanged(object sender, EventArgs e)
         {
-            decimal edad = numericUpDownEdad.Value;
+            edad = numericUpDownEdad.Value;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -85,7 +93,7 @@ namespace GestionInfoPersonal
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            
+            nombre = txtNombre.Text;
         }
         //método que se llama al iniciar el formulario
         private void Form1_Load(object sender, EventArgs e)
@@ -122,6 +130,37 @@ namespace GestionInfoPersonal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            String nombre = txtNombre.Text;
+            String direcion = txtDireccion.Text;
+            String email = txtEmail.Text;
+            String genero; 
+            if(rbMasculino.Checked)
+            {
+                genero = rbMasculino.Text;
+            }
+            else
+            {
+                genero = rbFemenino.Text;
+            }
+
+            int edad = int.Parse(numericUpDownEdad.Value.ToString());
+            String fechaNaci = monthCalendarFeNaci.ToString();
+            String suscripcion = cbxIncripcionSi.Text;
+            //List<String> pasatiempos = checkedListBoxHobbies.Items;
+
+            foreach (var item in checkedListBoxHobbies.CheckedItems)
+            {
+                pasatiempos.Add(item.ToString());
+            }
+
+            String pais = comboBoxPais.Text;
+            int nivelSatisfaccion = trackBarCalificacion.Value;
+
+
+            Usuario encuesta = new Usuario(nombre, direcion, email, genero, edad, fechaNaci, suscripcion, pasatiempos, pais, nivelSatisfaccion);
+
+            MessageBox.Show(encuesta.mostrarInfo());
+            
 
         }
 
@@ -137,26 +176,49 @@ namespace GestionInfoPersonal
             monthCalendarFeNaci.SetDate(dt);
             cbxIncripcionSi.Checked = false;
             cbxIncripcionNo.Checked = false;
-            /*
-            foreach(var i in checkedListBoxHobbies.CheckedItems)
+            
+            //para desmarcar los items del checkedbox list
+            for(int i = 0; i < checkedListBoxHobbies.Items.Count; i++)
             {
-                int item = checkedListBoxHobbies.Items.IndexOf(i);
-                checkedListBoxHobbies.SetItemChecked(item, false);
-            }*/
-
-            //foreach(var item in checkedListBoxHobbies.Items)
-            //{
-            //    checkedListBoxHobbies.Items.
-            //}
+                checkedListBoxHobbies.SetItemChecked(i, false);
+            }
             comboBoxPais.Text = string.Empty;   
             trackBarCalificacion.Value = 0;
-
 
         }
 
         private void brnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkedListBoxHobbies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            direcion = txtDireccion.Text;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            email = txtEmail.Text;
+        }
+
+        private void panelSuscricion_Paint(object sender, PaintEventArgs e)
+        {
+            if(cbxIncripcionNo.Checked)
+            {
+                suscripcion = cbxIncripcionSi.Text;
+            }
+            else
+            {
+                suscripcion = txtDireccion.Text;
+            }
+
+            
         }
     }
 }
